@@ -1,8 +1,8 @@
-typed-array
+isTypedArray
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Validates if a value is a typed array.
+> Validates if a value is a [typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays).
 
 
 ## Installation
@@ -17,18 +17,71 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-typed-array' );
+var isTypedArray = require( 'validate.io-typed-array' );
 ```
 
-#### foo( value )
+#### isTypedArray( value )
 
-What does this function do?
+Validates if a value is a [typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays).
+
+``` javascript
+var bool = isTypedArray( new Int8Array( 10 ) );
+// returns true
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-typed-array' );
+var isTypedArray = require( 'validate.io-typed-array' );
+
+var arr = new Int8Array( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+arr = new Uint8Array( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+arr = new Uint8ClampedArray( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+arr = new Int16Array( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+arr = new Uint16Array( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+arr = new Int32Array( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+arr = new Uint32Array( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+arr = new Float32Array( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+arr = new Float64Array( 10 );
+console.log( isTypedArray( arr ) );
+// returns true
+
+console.log( isTypedArray( [] ) );
+// returns false
+
+console.log( isTypedArray( {} ) );
+// returns false
+
+console.log( isTypedArray( null ) );
+// returns false
+
+console.log( isTypedArray( new Buffer( 10 ) ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,

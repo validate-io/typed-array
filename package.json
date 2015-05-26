@@ -26,12 +26,25 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "valid",
+    "typed",
+    "array",
+    "typed array",
+    "is",
+    "istypedarray",
+    "istyped",
+    "isarray",
+    "class",
+    "constructor",
+    "name"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/typed-array/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "type-name": "^1.0.1"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",
